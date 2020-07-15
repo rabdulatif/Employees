@@ -1,0 +1,57 @@
+﻿@model  Employees.Database.Tables.Employee
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm("AddOrEdit", "Employee", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+{@Html.HiddenFor(model => model.EmployeeGuid) <div class="form-group">
+    @Html.LabelFor(model => model.PayrollNumber, new { @class = "control-label" })
+    @Html.EditorFor(model => model.PayrollNumber, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Forenames, new { @class = "control-label" })
+    @Html.EditorFor(model => model.Forenames, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Surname, new { @class = "control-label" })
+    @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.DateOfBirth, new { @class = "control-label" })
+    @Html.TextBoxFor(x => x.DateOfBirth, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Telephone, new { @class = "control-label" })
+    @Html.EditorFor(model => model.Telephone, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Mobile, new { @class = "control-label" })
+    @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Address, new { @class = "control-label" })
+    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Address2, new { @class = "control-label" })
+    @Html.EditorFor(model => model.Address2, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.PostCode, new { @class = "control-label" })
+    @Html.EditorFor(model => model.PostCode, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.StartDate, new { @class = "control-label" })
+    @Html.TextBoxFor(x => x.StartDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <input type="reset" value="Reset" class="btn" />
+</div>
+}
